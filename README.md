@@ -46,7 +46,7 @@ deny all: Blocks access from all IPs except those explicitly allowed.
 #### 1. Allow a Specific IP Address
 Only allow access from 192.168.1.100:
 
-```
+```nginx
 location /admin/ {
     allow 192.168.1.100;
     deny all;
@@ -56,7 +56,7 @@ location /admin/ {
 #### 2. Allow Multiple IP Addresses
 Allow two specific IPs:
 
-```
+```nginx
 location /admin/ {
     allow 192.168.1.100;
     allow 192.168.1.101;
@@ -65,7 +65,7 @@ location /admin/ {
 ```
 #### 3. Allow Access from a Specific Subnet
 Use CIDR notation to allow a whole subnet:
-```
+```nginx
 location /admin/ {
     allow 192.168.1.0/24;
     deny all;
@@ -74,7 +74,7 @@ location /admin/ {
 #### 4. Handling Exceptions
 Order of directives matters. This example denies one IP while allowing others:
 
-```
+```nginx
 location /admin/ {
     allow 192.168.1.100;
     deny 192.168.1.101;
