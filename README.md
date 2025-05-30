@@ -47,7 +47,7 @@ deny all: Blocks access from all IPs except those explicitly allowed.
 Only allow access from 192.168.1.100:
 
 ```nginx
-location /admin/ {
+location /path/ {
     allow 192.168.1.100;
     deny all;
 }
@@ -57,7 +57,7 @@ location /admin/ {
 Allow two specific IPs:
 
 ```nginx
-location /admin/ {
+location /path/ {
     allow 192.168.1.100;
     allow 192.168.1.101;
     deny all;
@@ -75,7 +75,7 @@ location /admin/ {
 Order of directives matters. This example denies one IP while allowing others:
 
 ```nginx
-location /admin/ {
+location /path/ {
     allow 192.168.1.100;
     deny 192.168.1.101;
     allow all;
