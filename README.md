@@ -28,7 +28,7 @@ In **Nginx**, you can restrict or allow access to certain parts of your applicat
 ## 🧾 Basic Syntax
 
 ```nginx
-location /protected/ {
+location /path/ {
     allow ip_address;  # Allow a specific IP
     deny ip_address;   # Deny a specific IP
     deny all;          # Deny all other IPs
@@ -66,7 +66,7 @@ location /path/ {
 #### 3. Allow Access from a Specific Subnet
 Use CIDR notation to allow a whole subnet:
 ```nginx
-location /admin/ {
+location /path/ {
     allow 192.168.1.0/24;
     deny all;
 }
